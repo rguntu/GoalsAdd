@@ -3,6 +3,7 @@ import { View, TextInput, Button, StyleSheet, Modal } from "react-native";
 
 const GoalInput = (props) => {
   const [goal, setGoal] = useState("");
+
   const setGoalHandler = (goal) => {
     return setGoal(goal);
   };
@@ -13,9 +14,9 @@ const GoalInput = (props) => {
   return (
     
     <Modal visible={props.modelState} >
-    <View style={styles.inputView}>
+    <View style={styles.screen}>
       <TextInput
-        style={styles.textInput}
+        style={styles.input}
         onChangeText={setGoalHandler}
         value={goal}
       ></TextInput>
@@ -41,8 +42,17 @@ const GoalInput = (props) => {
 };
 
 const styles = StyleSheet.create({
-  button: {
-    width : "40%"
+  screen: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  input: {
+    width: "80%",
+    borderColor: "black",
+    borderWidth: 1,
+    padding: 10,
+    marginBottom: 20
   },
   buttons: {
     flexDirection: 'row',
@@ -50,17 +60,10 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     width: "80%"
   },
-  inputView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+ 
+  button: {
+    width : "40%"
   },
-  textInput: {
-    width: "80%",
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 10,
-    marginBottom: 20
-  },
+ 
 });
 export default GoalInput;

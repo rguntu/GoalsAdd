@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
 } from "react-native";
 
-const ListItem = (props) => {
+const GoalItem = (props) => {
   return (
     <TouchableOpacity onPress={props.onDelete.bind(this, props.id)}>
       <View style={styles.listItem}>
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 });
-export default ListItem;
+export default GoalItem;

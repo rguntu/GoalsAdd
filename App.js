@@ -9,7 +9,7 @@ import {
   FlatList,
 } from "react-native";
 
-import ListItem from './components/ListItem'
+import GoalItem from './components/GoalItem'
 import GoalInput from "./components/GoalInput";
 
 export default function App() {
@@ -48,7 +48,7 @@ export default function App() {
         keyExtractor={(item,key) => {return(item.id)}}
         renderItem={(itemD) => {
           return (
-            <ListItem id={itemD.item.id} onDelete={onDeleteHandler} title={itemD.item.text} />
+            <GoalItem id={itemD.item.id} onDelete={onDeleteHandler} title={itemD.item.text} />
           );
         }}
       />
@@ -64,17 +64,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignContent: "center",
-  },
-  textInput: {
-    width: "80%",
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 10,
-  },
-  listItem: {
-    padding: 10,
-    marginVertical: 5,
-    backgroundColor: "#ccc",
-    borderWidth: 1,
-  },
+  }
 });
